@@ -1,0 +1,771 @@
+/* --------------------------------------------------------- MEDIDAS --------------------------------------------------------- */
+
+:root {
+    --primary-pink: #BD2A71;
+    --bg-page: #fee2ec;      /* Cor de fundo da página */
+    --bg-card: #fff7f9;      /* Cor do quadrado central */
+    --border-pink: #F4A7C5;
+    --text-gray: #4A4A4A;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--bg-page); /* Fundo rosa claro */
+    color: var(--text-gray);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+button, input, select, textarea, span {
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px 60px;
+    margin-bottom: 0; 
+    height: 41px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-right span {
+    font-weight: 700;
+    color: #000000; 
+    margin-right: 15px;
+    font-size: 0.9em;
+}
+
+.logo img { height: 40px; }
+
+nav a { text-decoration: none; color: #ccc; margin: 0 10px; font-weight: bold; font-size: 0.9em; }
+nav a.active { color: var(--primary-pink); border-bottom: 2px solid var(--primary-pink); padding-bottom: 5px; }
+
+.btn-settings {
+    background: none;
+    border: none;
+    color: var(--primary-pink);
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.btn-next {
+    background-color: var(--primary-pink);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* Container Principal:*/
+.container {
+    max-width: 1750px;
+    margin: 20px auto; 
+    background-color: var(--bg-card); 
+    padding: 45px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    width: 90%;
+}
+
+.top-info {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    width: 250px;
+    text-align: left;
+}
+
+.top-info p {
+    color: #ee4681; 
+    font-size: 0.85em;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.top-info p strong {
+    color: #bd2a71; 
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 20px; /* tópicos principais */
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+h2 i.fa-ruler {
+    color: var(--primary-pink);
+    font-size: 0.9em;     
+    font-size: 1.7em;
+    transform: rotate(45deg); 
+    display: inline-block; 
+}
+
+h2 i.fa-person {
+    color: var(--primary-pink);
+    font-size: 0.9em;     
+    font-size: 1.7em;
+    transform: rotate(000deg); 
+    display: inline-block; 
+}
+
+
+/* Inputs */
+.input-grid { display: flex; flex-direction: column; gap: 20px; width: 350px; }
+
+
+.field label {
+    font-size: 14px; 
+    font-weight: 700;
+    text-transform: uppercase; 
+    color: #333;
+}
+
+
+input {
+    border: 1.2px solid var(--border-pink); 
+    background-color: white;
+    height: 38px;
+    border-radius: 8px;
+    padding: 0 12px;
+    width: 100%;
+    outline: none;
+}
+
+.field.group {
+    display: flex;
+    gap: 50px; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.sub-field { width: 50%; }
+
+/* Cards de Corpo */
+.corpo-grid { display: flex; gap: 15px; margin-top: 15px; }
+
+.corpo-card {
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    width: 120px;         
+    height: 160px;        
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;  
+    justify-content: center; 
+    gap: 10px;              
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.02);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.corpo-card img {
+    height: 80px;         
+    width: auto;
+    object-fit: contain; 
+}
+
+.corpo-card span {
+    font-size: 0.75em;  
+    font-weight: 700;     
+    color: var(--text-gray);
+}
+
+.corpo-card.active {
+    border: 2px solid var(--primary-pink);
+}
+
+.section-corpo {
+    margin-top: 10px; 
+}
+
+
+/* Footer Buttons */
+.actions { display: flex; align-items: center; gap: 30px; margin-top: 50px; }
+
+.btn-primary { background: #bd2a71; color: white; border: none; padding: 14px 28px; border-radius: 10px; font-weight: bold; cursor: pointer; }
+.btn-secondary { background: #bd2a71;  color: white; border: none; padding: 14px 28px; border-radius: 10px; font-weight: bold; cursor: pointer; }
+
+.footer-note-bold {
+    font-size: 16px; 
+    font-weight: 700;
+    color: #bd2a71;  
+    margin-bottom: 2px;
+}
+
+/* Frase de baixo */
+.footer-note-small {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #ee4681;  
+    margin-top: 0;
+}
+
+/* Destaque */
+.footer-note-small strong {
+    font-weight: 700;
+    color: #bd2a71; 
+}
+
+/* --------------------------------------------------------- LOGIN ---------------------------------------------------------
+
+/* Estilos Específicos do Login */
+.login-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    padding: 20px;
+    background-color: var(--bg-page);
+    overflow: hidden; 
+}
+
+.login-box {
+    background-color: var(--bg-page) !important;
+    border: 15px solid var(--primary-pink);
+    border-radius: 0;
+    padding: 60px 40px;
+    width: 85%;
+    max-width: 1000px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 0 30px white; 
+    z-index: 2;
+}
+
+/* --- BOLINHAS ROSAS (EXTERNAS) --- */
+
+.decoration-side {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5vh 0; 
+    z-index: 1;
+    pointer-events: none;
+}
+
+.decoration-side.left { left: 40px; }
+.decoration-side.right { right: 40px; }
+
+.decoration-side span {
+    width: 50px !important; 
+    height: 50px !important; 
+    min-width: 50px !important;
+    min-height: 50px !important;
+
+    background-color: var(--primary-pink) !important;
+    border-radius: 50%;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* --- BOLINHAS BRANCAS (INTERNAS AO QUADRO ROSA) --- */
+
+.inner-dots {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px 0;
+    z-index: 3;
+}
+
+.left-dots { left: 30px; }
+.right-dots { right: 30px; }
+
+.inner-dots span {
+    width: 45px !important;
+    height: 45px !important;
+    min-width: 45px !important;
+    min-height: 45px !important;
+    background-color: white !important;
+    border-radius: 50%;
+    display: block;
+}
+
+/* --- FORMULÁRIO E TEXTOS --- */
+.login-header h1 {
+    color: var(--primary-pink) !important;
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.login-header p {
+    color: #F4A7C5 !important; 
+    font-weight: 600;
+    margin-bottom: 35px;
+    font-size: 1.1em;
+}
+
+.login-form {
+    max-width: 380px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.login-form .field {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #4A4A4A;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.login-form input {
+    background-color: white !important;
+    border: 1.2px solid var(--border-pink);
+    height: 45px; 
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    font-size: 1.1em;
+    background-color: var(--primary-pink);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-full:hover {
+    background-color: #a32462; 
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: 8px;
+    color: var(--primary-pink) !important;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 0.9em;
+}
+
+.signup-text {
+    margin-top: 35px;
+    font-weight: 600;
+    color: var(--text-gray);
+}
+
+.signup-text a {
+    color: var(--primary-pink) !important;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------- roupas --------------------------------------------------------- */
+
+
+body {
+    background-color: #fdd1e0; /* Fundo rosa externo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+
+
+/* --- O BLOCÃO BRANCO PRINCIPAL --- */
+.container-roupa {
+    width: 900%;
+    max-width: 1800px;
+    background-color: rgb(255, 255, 255); 
+    margin: 40px auto;
+    border-radius: 30px;
+    padding: 30px;
+    min-height: 800px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start; /* Alinha o conteúdo da esquerda ao topo */
+}
+
+/* --- PAINEL DA ESQUERDA (TEXTOS) --- */
+.left-panel {
+    flex: 2.20;
+}
+
+.instrucao {
+    color: #db4a85;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 400;
+}
+
+.instrucao strong {
+    font-weight: 700;
+}
+
+.field-link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #db4a85;
+}
+
+.field-link label {
+    color: #be2e6a;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0px;
+    display: block;
+}
+
+.field-link input {
+    width: 100%;
+    max-width: 350px; 
+    padding: 12px;
+    border: 1px solid #f9dce7;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif; 
+    color: #db4a85; 
+    outline: none;
+    font-size: 15px;
+}
+
+.field-link input::placeholder {
+    color: #f0a1bf;
+}
+
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-next:hover { background-color: #a02658; }
+.btn-back:hover { background-color: #e5e5e5; }
+
+.btn-next, .btn-back {
+    font-family: 'Poppins', sans-serif; /* Use a mesma fonte do seu logo */
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-next {
+    background-color: #be2e6a;
+    color: white;
+}
+
+/* Estilo do Voltar (Fundo cinza clarinho ou transparente para não brigar com o principal) */
+.btn-back {
+    background-color: #be2e6a; 
+    color: #ffffff;
+   
+}
+
+.btn-simular {
+    background-color: #be2e6a;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 15px;
+   
+    width: fit-content;    
+    display: block;        
+}
+
+
+.btn-simular:hover {
+    background-color: #a02658;
+}
+
+/* --- PAINEL DA DIREITA (MOLDURA ROSA) --- */
+.right-panel {
+    flex: 1;
+    background-color: #fdd1e0; /* Moldura rosa da foto */
+    border-radius: 25px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Quadrado branco da imagem */
+.image-preview-card {
+    background-color: white;
+    padding: 10px; /* Padding reduzido para a imagem ocupar mais espaço */
+    width: 100%;
+    max-width: 400px; /* Aumentado de 350px para 400px */
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.image-preview-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Texto de rodapé da foto */
+.footer-preview {
+    color: #db4a85;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 300px;
+    margin: 0;
+}
+
+/* Correção para o erro que apareceu no seu Explorer */
+.decoration-side {
+    padding: 5vh 0; /* Sem a barra "/" agora */
+}
+
+/* --------------------------------------------------------- analise ---------------------------------------------------------*/
+
+
+.analise-page {
+    background-color: #FFE2EC; 
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+.main-analise {
+    display: flex;
+    height: calc(100vh - 61px);
+    width: 100%;
+}
+
+/* --- SEÇÃO ESQUERDA (VISUAL) --- */
+.visual-section {
+    flex: 1.2;
+    background-color: #BF2C73; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px;
+}
+
+.clothing-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.clothing-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.clothing-card img {
+    max-height: 450px;
+    display: block;
+}
+
+.stars-decor {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    color: #FDE8EF; 
+    font-size: 5.5rem;
+    /* Glow suave para as estrelas */
+    filter: drop-shadow(0 0 8px rgba(253, 232, 239, 0.6)); 
+}
+
+.heat-map-legend {
+    width: 80%;
+    margin-top: 60px;
+}
+
+.legend-labels {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.gradient-bar {
+    height: 12px;
+    background: linear-gradient(to right, #4facfe, #00f2fe, #f9d423, #ff4e50);
+    border-radius: 30px;
+}
+
+/* --- SEÇÃO DIREITA (DADOS) --- */
+.data-section {
+    flex: 0.8;
+    background-color: #FFE2EC; 
+    padding: 30px 40px;
+    overflow-y: auto;
+}
+
+.data-section h2 {
+    font-size: 1.2rem;
+    color: #BF2C73;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.card-info {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.card-info.alert { border-left: 8px solid #FF7B00; }
+.card-info.info { border-left: 8px solid #FF61AD; }
+
+/* --- DICAS DE TAMANHO (CARDS COM TRANSPARÊNCIA) --- */
+.size-options-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.size-option {
+    background-color: #FF61AD54; /* Sua cor com transparência */
+    border: 1px solid #FF61AD33;
+    border-radius: 12px;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    /* Adicionado o espaçamento que você pediu */
+    margin-bottom: 15px; 
+}
+
+.size-option:last-child {
+    margin-bottom: 0;
+}
+
+.size-option span {
+    color: #4A0E2E; 
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.size-option.active {
+    background-color: #BF2C73;
+    border: none;
+    box-shadow: 0 4px 12px rgba(191, 44, 115, 0.3);
+}
+
+.size-option.active span {
+    color: #FFFFFF;
+}
+
+.size-tag {
+    background-color: #FDE8EF;
+    color: #4A0E2E;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.size-option.active .size-tag {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+}
+
+/* --- CHANCE DE ACERTO --- */
+.accuracy-section {
+    margin-top: 40px;
+}
+
+.percentage {
+    font-size: 50px;
+    font-weight: 900;
+    color: #FF61AD; 
+    display: flex;
+    align-items: baseline;
+    line-height: 1;
+}
+
+.percentage span {
+    font-size: 2.5rem;
+    color: #FF61AD;
+}
+
+/* --- NAVBAR E ACESSÓRIOS --- */
+.favoritos-link {
+    color: #BF2C73;
+    font-weight: 700;
+    margin-right: 25px;
+    text-decoration: none;
+}
+
+.btn-voltar {
+    background-color: #BF2C73;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitella - Medidas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="Fitella Logo">
+    </div>
+    <nav>
+        <a href="medidas.html" class="active">Medidas</a> / 
+        <a href="roupas.html">Roupas</a> / 
+        <a href="analise.html">Análise e dicas</a>
+    </nav>
+    <div class="nav-right">
+        <span>Favoritos</span>
+        <!-- Botão agora leva para a tela de roupas -->
+        <button class="btn-next" onclick="window.location.href='roupas.html'">Próxima página</button>
+        <button class="btn-settings"><i class="fa-solid fa-gear"></i></button>
+    </div>
+</header>
+
+    <main class="container">
+      <div class="top-info">
+    <p>Preencha os campos indicados com suas medidas e em seguida clique em <strong>próxima página</strong> para seguir pra página de seleção da roupa.</p>
+</div>
+
+        <section class="section-medidas">
+            <h2> <i class="fa-solid fa-ruler"></i> MEDIDAS</h2>
+            <div class="input-grid">
+                <div class="field">
+                    <label>ALTURA (CM)</label>
+                    <input type="number" id="altura" placeholder="175">
+                </div>
+                <div class="field">
+                    <label>LARGURA DO OMBRO (CM)</label>
+                    <input type="number" id="ombro" placeholder="42.5">
+                </div>
+                <div class="field group">
+                    <div class="sub-field">
+                        <label>TÓRAX/BUSTO (CM)</label>
+                        <input type="number" id="torax" placeholder="94">
+                    </div>
+                    <div class="sub-field">
+                        <label>CINTURA (CM)</label>
+                        <input type="number" id="cintura" placeholder="78">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>QUADRIL (CM)</label>
+                    <input type="number" id="quadril" placeholder="98">
+                </div>
+            </div>
+
+            
+       <section class="section-corpo">
+    <h2><i class="fa-solid fa-person"></i> FORMATO DE CORPO</h2>
+    <div class="corpo-grid">
+        
+        <div id="card-triangulo" class="corpo-card" onclick="selecionarCorpo('card-triangulo')">
+            <img src="img/triangulo.png" alt="Triângulo">
+            <span>Triângulo</span>
+        </div>
+
+        <div id="card-ampulheta" class="corpo-card" onclick="selecionarCorpo('card-ampulheta')">
+            <img src="img/ampulheta.png" alt="Ampulheta">
+            <span>Ampulheta</span>
+        </div>
+
+        <div id="card-retangulo" class="corpo-card" onclick="selecionarCorpo('card-retangulo')">
+            <img src="img/retangulo.png" alt="Retângulo">
+            <span>Retângulo</span>
+        </div>
+
+        <div id="card-triangulo-invertido" class="corpo-card" onclick="selecionarCorpo('card-triangulo-invertido')">
+            <img src="img/triangulo invertido.png" alt="Triângulo Invertido">
+            <span>Triângulo Invertido</span>
+        </div>
+<script>
+    // Função para deixar os cards selecionáveis visualmente
+    function selecionarCorpo(id) {
+        // Remove a classe 'active' de todos os cards
+        document.querySelectorAll('.corpo-card').forEach(card => {
+            card.classList.remove('active');
+        });
+        // Adiciona a classe 'active' apenas no clicado
+        document.getElementById(id).classList.add('active');
+    }
+</script>
+
+</section>
+
+       <footer class="actions">
+    <div class="buttons-main">
+        <button class="btn-secondary">Usar só uma vez</button>
+        <button id="save-btn" class="btn-primary">Salvar medidas</button>
+    </div>
+    
+    <div class="footer-text-group">
+        <p class="footer-note-bold">Não esqueça de salvar suas medidas se quiser utilizá-las outras vezes.</p>
+        <p class="footer-note-small">Você pode sempre editar suas medidas clicando em <strong>medidas</strong> no cabeçalho da pagina!</p>
+    </div>
+</footer>
+    </main>
+
+</body>
+</html>

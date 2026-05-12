@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitella - Análise e Dicas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="analise-page">
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Fitella Logo">
+        </div>
+        <nav>
+            <a href="medidas.html">Medidas</a> / 
+            <a href="roupas.html">Roupas</a> / 
+            <a href="analise.html" class="active">Análise e dicas</a>
+        </nav>
+        <div class="buttons">
+            <span class="favoritos-link">Favoritos</span>
+            <button class="btn-back" onclick="window.location.href='roupas.html'">Voltar</button>
+            <button class="btn-settings"><i class="fa-solid fa-gear"></i></button>
+        </div>
+    </header>
+
+    <main class="main-analise">
+        <section class="visual-section">
+            <div class="clothing-container">
+                <div class="clothing-card">
+                    <img src="img/CAMISA-POLO.jpg" alt="Análise da Roupa">
+                </div>
+                <div class="stars-decor">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="heat-map-legend">
+                <div class="legend-labels">
+                    <span>FOLGA DE CAIMENTO</span>
+                    <span>ZONA DE TENSÃO</span>
+                </div>
+                <div class="gradient-bar"></div>
+            </div>
+        </section>
+
+        <section class="data-section">
+            <div class="topic">
+                <h2><i class="fas fa-chart-line"></i> ANÁLISE DE CAIMENTO</h2>
+                <div class="card-info alert">
+                    <div class="card-header">
+                        <strong>ONDE PODE ESTAR UM POUCO APERTADA</strong>
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <p>A costura do ombro está apertando um pouco.</p>
+                </div>
+                <div class="card-info info">
+                    <div class="card-header">
+                        <strong>ONDE PODE ESTAR FOLGADA</strong>
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <p>A roupa pode estar sobrando na cintura.</p>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h2><i class="fas fa-tshirt"></i> DICAS DE TAMANHO</h2>
+                <div id="size-p" class="size-option" onclick="selecionarTamanho('size-p')">
+                    <span>Slim Fit</span>
+                    <span class="tag">TAMANHO P</span>
+                </div>
+                <div id="size-m" class="size-option active" onclick="selecionarTamanho('size-m')">
+                    <span>Regular Fit</span>
+                    <span class="tag">TAMANHO M</span>
+                </div>
+                <div id="size-g" class="size-option" onclick="selecionarTamanho('size-g')">
+                    <span>Oversized</span>
+                    <span class="tag">TAMANHO G</span>
+                </div>
+            </div>
+
+            <div class="accuracy-section">
+                <h3>CHANCE DE ACERTO</h3>
+                <div class="percentage">94.2<span>%</span></div>
+                <p>Alta precisão baseada no perfil biométrico e coeficientes de elasticidade do tecido.</p>
+            </div>
+        </section>
+    </main>
+
+<script>
+    function selecionarTamanho(id) {
+        document.querySelectorAll('.size-option').forEach(option => {
+            option.classList.remove('active');
+        });
+        document.getElementById(id).classList.add('active');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitella - Escolher Roupa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <header class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="Fitella Logo">
+    </div>
+    <nav>
+        <a href="medidas.html">Medidas</a> / 
+        <a href="roupas.html" class="active">Roupas</a> / 
+        <a href="analise.html">Análise e dicas</a>
+    </nav>
+    <div class="buttons">
+        <!-- Navegação das abas laterais -->
+        <button class="btn-next" onclick="window.location.href='analise.html'">Próxima página</button>
+        <button class="btn-back" onclick="window.location.href='medidas.html'">Voltar</button>
+        <button class="btn-settings"><i class="fa-solid fa-gear"></i></button>
+    </div>
+</header>
+
+    <main class="container-roupa">
+    <div class="content-wrapper">
+        <section class="left-panel">
+            <h1 class="instrucao">
+                Agora o processo é bem simples... Coloque no espaço abaixo o link da roupa desejada e iremos mostrar qual o <strong>melhor tamanho</strong> pra o <strong>SEU CORPO!</strong>
+            </h1>
+
+            <div class="field-link">
+                <label for="url-roupa">LINK</label>
+                <input type="text" id="url-roupa" placeholder="https://br.pinterest.com/pin/...">
+                <!-- Botão Simular levando para a análise -->
+                <button class="btn-simular" onclick="window.location.href='analise.html'">Simular</button>
+            </div>
+
+            </section>
+
+        <section class="right-panel">
+            <div class="image-preview-card">
+                <img src="img/CAMISA-POLO.jpg" alt="Preview da Roupa">
+            </div>
+            <p class="footer-preview">
+                A roupa deve aparecer no espaço acima, verifique se é a escolhida e clique no botão <strong>SIMULAR</strong> para passar para página de simulação.
+            </p>
+        </section>
+    </div>
+</main>
+</body>
+</html>
